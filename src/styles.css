@@ -199,24 +199,6 @@ figcaption {
   backdrop-filter: blur(14px);
 }
 
-.quick-read {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
-  overflow: hidden;
-  margin-bottom: clamp(82px, 10vw, 140px);
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.quick-read div {
-  min-height: 160px;
-  padding: 26px;
-  background: var(--surface);
-}
-
-.quick-read span,
 .project-facts span {
   display: block;
   margin-bottom: 24px;
@@ -226,7 +208,6 @@ figcaption {
   text-transform: uppercase;
 }
 
-.quick-read strong,
 .project-facts strong {
   display: block;
   max-width: 300px;
@@ -639,7 +620,6 @@ figcaption {
     border-radius: 0;
   }
 
-  .quick-read,
   .project-facts,
   .case-study,
   .project-index,
@@ -647,7 +627,6 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  .quick-read div,
   .case-study article,
   .project-facts div {
     min-height: auto;
