@@ -30,4 +30,18 @@ src/
 
 ## Status
 
-This repo is currently an archive scaffold. The new professional site has not been designed or implemented yet.
+This repo now includes a first-pass static portfolio prototype in `src/`.
+
+## Local Preview
+
+Open `src/index.html` directly in a browser, or run a simple local server from `src/`:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then visit:
+
+```text
+http://127.0.0.1:4173/
+```
