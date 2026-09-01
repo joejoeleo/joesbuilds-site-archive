@@ -118,6 +118,7 @@ main,
 h1,
 h2,
 h3,
+h4,
 p {
   margin-top: 0;
 }
@@ -143,6 +144,14 @@ h3 {
   margin-bottom: 12px;
   font-size: 28px;
   line-height: 1.08;
+  font-weight: 720;
+  letter-spacing: 0;
+}
+
+h4 {
+  margin-bottom: 8px;
+  font-size: 21px;
+  line-height: 1.12;
   font-weight: 720;
   letter-spacing: 0;
 }
@@ -308,6 +317,101 @@ figcaption {
 .case-study p {
   margin-bottom: 0;
   font-size: 16px;
+}
+
+.process-block {
+  margin-top: clamp(46px, 7vw, 86px);
+}
+
+.process-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
+  gap: clamp(28px, 5vw, 74px);
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.process-heading h3 {
+  margin-bottom: 0;
+  font-size: 34px;
+}
+
+.process-heading p:last-child {
+  margin-bottom: 0;
+  font-size: 17px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.process-item {
+  display: grid;
+  grid-template-rows: minmax(0, auto) 1fr;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.process-item.wide {
+  grid-column: span 2;
+}
+
+.process-item figure {
+  margin: 0;
+  overflow: hidden;
+  background: #dddbd3;
+  aspect-ratio: 4 / 3;
+}
+
+.process-item.tall figure {
+  aspect-ratio: 4 / 5;
+}
+
+.process-item img,
+.process-item video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.process-item video {
+  background: #101214;
+  object-fit: contain;
+}
+
+.process-item div {
+  padding: 22px;
+}
+
+.process-item span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.process-item p {
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.archive-process {
+  margin-top: clamp(34px, 5vw, 64px);
+  padding-top: clamp(28px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+}
+
+.compact-process .process-item {
+  min-height: 0;
 }
 
 .media-pair {
@@ -527,6 +631,7 @@ figcaption {
   .section-intro,
   .flagship-grid,
   .media-pair,
+  .process-heading,
   .about,
   .resume,
   .contact,
@@ -554,8 +659,13 @@ figcaption {
 
   .project-facts,
   .case-study,
+  .process-grid,
   .project-index {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-item.wide {
+    grid-column: span 2;
   }
 
 }
@@ -598,6 +708,10 @@ figcaption {
     font-size: 24px;
   }
 
+  h4 {
+    font-size: 20px;
+  }
+
   p,
   .hero-copy p:last-child {
     font-size: 16px;
@@ -623,8 +737,22 @@ figcaption {
   .project-facts,
   .case-study,
   .project-index,
+  .process-grid,
   .media-pair .product-shot {
     grid-template-columns: 1fr;
+  }
+
+  .process-item.wide {
+    grid-column: span 1;
+  }
+
+  .process-item figure,
+  .process-item.tall figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .process-heading {
+    gap: 16px;
   }
 
   .case-study article,
