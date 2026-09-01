@@ -3,259 +3,270 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Joseph Leonardis | Engineering Portfolio</title>
+    <title>Joseph Leonardis | Mechanical Design Portfolio</title>
     <meta
       name="description"
-      content="Engineering portfolio for Joseph Leonardis: mechanical design, prototyping, product design, fabrication, and interface projects."
+      content="Mechanical design and product development portfolio for Joseph Leonardis."
     >
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top">Joseph Leonardis</a>
+      <a class="brand" href="#top" aria-label="Joseph Leonardis home">
+        <span>Joseph Leonardis</span>
+        <small>Mechanical Design Portfolio</small>
+      </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
+        <a href="#flagship">Flagship</a>
+        <a href="#work">Projects</a>
         <a href="#about">About</a>
+        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
-        <a href="#archive">Archive</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <p class="kicker">Engineering Portfolio</p>
-        <h1>Mechanical design, prototypes, and product-minded builds.</h1>
-        <p class="hero-text">
-          I’m Joseph Leonardis. I build physical projects, computer interfaces, and working prototypes with a focus on function, detail, and how the final object is actually used.
-        </p>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Mechanical engineer / product development / prototyping</p>
+          <h1 id="hero-title">I design and build physical products, prototypes, and useful mechanical systems.</h1>
+          <p>
+            My strongest work sits where CAD, fabrication, electronics, and hands-on iteration meet. I like projects that have to become real objects.
+          </p>
+        </div>
+        <figure class="hero-media">
+          <img src="./assets/images/capstone.jpg" alt="Infinity Entertainment Table with drink bottles and touchscreen controls">
+          <figcaption>Infinity Entertainment Table, RIT capstone</figcaption>
+        </figure>
       </section>
 
-      <section class="profile-strip" aria-label="Engineering focus">
+      <section class="quick-read" aria-label="Portfolio summary">
         <div>
-          <span>Focus</span>
-          <strong>Design Engineering</strong>
+          <span>Current Focus</span>
+          <strong>Mechanical design and product development</strong>
         </div>
         <div>
-          <span>Hands-On Work</span>
-          <strong>CAD, fabrication, wiring, assembly</strong>
+          <span>Work Style</span>
+          <strong>Model it, build it, test it, revise it</strong>
         </div>
         <div>
-          <span>Role Interests</span>
-          <strong>Mechanical, prototype, and product design</strong>
+          <span>Best Evidence</span>
+          <strong>Capstone table with lighting, controls, and drink dispensing</strong>
+        </div>
+      </section>
+
+      <section class="flagship" id="flagship" aria-labelledby="flagship-title">
+        <div class="section-intro">
+          <p class="eyebrow">Flagship Project</p>
+          <h2 id="flagship-title">Infinity Entertainment Table</h2>
+          <p>
+            My RIT senior capstone and the clearest example of how I like to work: start with an ambitious physical product, keep the design practical, and build enough of the system to prove it.
+          </p>
+        </div>
+
+        <div class="flagship-grid">
+          <figure class="product-shot final-shot">
+            <img src="./assets/images/capstone.jpg" alt="Finished Infinity Entertainment Table capstone build">
+          </figure>
+          <aside class="project-facts" aria-label="Infinity Entertainment Table facts">
+            <div>
+              <span>Role</span>
+              <strong>Project manager and lead designer</strong>
+            </div>
+            <div>
+              <span>Team</span>
+              <strong>Multidisciplinary RIT capstone team</strong>
+            </div>
+            <div>
+              <span>System</span>
+              <strong>Infinity LED table with five-drink dispensing</strong>
+            </div>
+          </aside>
+        </div>
+
+        <div class="case-study">
+          <article>
+            <h3>Built as a table first</h3>
+            <p>
+              The project had to work as furniture before it could work as a machine. The final build combines a table structure, wood surfaces, clear access panels, an infinity lighting feature, drink storage, tubing, controls, and a touchscreen interface.
+            </p>
+          </article>
+          <article>
+            <h3>Controls inside the object</h3>
+            <p>
+              The drink system uses Raspberry Pi controls, custom PCBs, and 3D-printed parts. The electronics and dispensing hardware had to fit inside the table without turning the object into a loose collection of parts.
+            </p>
+          </article>
+          <article>
+            <h3>Three design iterations</h3>
+            <p>
+              I led the team through three design iterations, using Fusion 360 to work through layout, packaging, and the relationship between the visible product surfaces and the internal dispensing system.
+            </p>
+          </article>
+          <article>
+            <h3>What I owned</h3>
+            <p>
+              I was elected project manager and lead designer. My role covered the product layout, mechanical direction, team coordination, design revisions, and keeping the build moving toward a working final prototype.
+            </p>
+          </article>
+        </div>
+
+        <div class="media-pair">
+          <figure class="product-shot">
+            <img src="./assets/images/led-infinity-table.jpg" alt="Blue LED infinity effect inside table">
+            <figcaption>Infinity lighting test from the earlier table build.</figcaption>
+          </figure>
+          <div class="notes-panel">
+            <p class="eyebrow">Build Details</p>
+            <ul>
+              <li>Fusion 360 CAD</li>
+              <li>3D-printed parts</li>
+              <li>Custom PCBs</li>
+              <li>Raspberry Pi controls</li>
+              <li>Five-drink dispensing system</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="work" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <p class="kicker">Selected Work</p>
-          <h2 id="work-title">Selected engineering projects from school and personal work.</h2>
+        <div class="section-intro compact">
+          <p class="eyebrow">Selected Projects</p>
+          <h2 id="work-title">More builds that show how I think with materials, mechanisms, and interfaces.</h2>
         </div>
 
-        <article class="project-feature capstone-feature">
-          <figure class="image-stage capstone-image">
-            <img src="./assets/images/capstone.jpg" alt="Senior capstone project">
-          </figure>
-          <div class="project-copy">
-            <p class="project-kind">Senior Capstone</p>
-            <h3>Senior Design Capstone</h3>
-            <p>
-              My capstone project brought together the most complete version of my engineering process: defining requirements, working through design tradeoffs, building toward a physical prototype, testing the result, and presenting the final work clearly.
-            </p>
-            <p>
-              This is the project that best represents how I approach engineering work when there is a real problem to solve and a finished result to deliver.
-            </p>
-            <ul class="tags">
-              <li>Mechanical design</li>
-              <li>Prototype development</li>
-              <li>Testing</li>
-              <li>Technical presentation</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="project-feature dark-feature">
-          <div class="interface-stage" aria-hidden="true">
-            <div class="interface-screen">
-              <div class="screen-header"></div>
-              <div class="screen-grid">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-          <div class="project-copy">
-            <p class="project-kind">Computer Interface</p>
-            <h3>Touchscreen Computer Interface</h3>
-            <p>
-              A touchscreen control surface for interacting with computer functions from a dedicated display. I see this project as a bridge between product design and computer workflow: simple controls, clear visual structure, and a physical interface that makes the computer feel more direct.
-            </p>
-            <ul class="tags">
-              <li>Touch input</li>
-              <li>Interface layout</li>
-              <li>Computer controls</li>
-            </ul>
-          </div>
-        </article>
-
-        <div class="project-list">
-          <article class="project-row">
-            <figure class="image-stage portrait-image">
-              <img src="./assets/images/led-infinity-table.jpg" alt="Infinity entertainment table">
-            </figure>
-            <div class="project-copy">
-              <p class="project-kind">Furniture / Lighting</p>
-              <h3>Infinity Entertainment Table</h3>
+        <div class="project-index">
+          <article class="project-card text-led">
+            <div>
+              <p class="project-type">In progress / personal build</p>
+              <h3>Lumen River Desk</h3>
               <p>
-                I built this table around an LED infinity effect, using reflection and layered lighting to create depth inside a functional piece of furniture.
+                An LED epoxy river desk with an integrated 7-inch touchscreen and local control interface for PC monitoring, media, and lighting.
               </p>
-              <ul class="tags">
-                <li>LED lighting</li>
-                <li>Fabrication</li>
-                <li>Assembly</li>
-              </ul>
             </div>
+            <span>Active build</span>
           </article>
 
-          <article class="project-row reverse">
-            <figure class="image-stage landscape-image">
-              <img src="./assets/images/led-study-table.jpg" alt="LED study table">
+          <article class="project-card text-led">
+            <div>
+              <p class="project-type">Controls / small automation</p>
+              <h3>Alexa-Powered Water Dispenser</h3>
+              <p>
+                A desk drinking-water dispenser controlled with Arduino and Alexa. The build pairs voice control with a small dispensing setup made for everyday use at a desk.
+              </p>
+            </div>
+            <span>Arduino + Alexa</span>
+          </article>
+
+          <article class="project-card text-led">
+            <div>
+              <p class="project-type">Competition / fabrication</p>
+              <h3>RIT Baja SAE</h3>
+              <p>
+                Designed and fabricated off-road vehicle frame hardware using SolidWorks, mills, lathes, and MIG/TIG welding for collegiate competition.
+              </p>
+            </div>
+            <span>Team build</span>
+          </article>
+
+          <article class="project-card with-image">
+            <figure>
+              <img src="./assets/images/led-study-table.jpg" alt="LED study table integrated into a work desk">
             </figure>
-            <div class="project-copy">
-              <p class="project-kind">Workspace Design</p>
+            <div>
+              <p class="project-type">Workspace design</p>
               <h3>LED Study Table</h3>
               <p>
-                I made this as a desk extension with lighting built into the structure. It gave me more usable workspace while keeping the setup clean and permanent.
+                A desk extension with lighting built into the surface. It solved a real workspace problem and kept the lighting integrated instead of clipped on later.
               </p>
-              <ul class="tags">
-                <li>Woodworking</li>
-                <li>Lighting</li>
-                <li>Functional design</li>
-              </ul>
             </div>
           </article>
 
-          <article class="project-row">
-            <figure class="image-stage landscape-image">
-              <img src="./assets/images/custom-longboard.jpg" alt="Custom longboard design">
+          <article class="project-card with-image">
+            <figure>
+              <img src="./assets/images/custom-longboard.jpg" alt="Fusion 360 custom longboard concept">
             </figure>
-            <div class="project-copy">
-              <p class="project-kind">CAD / Product Form</p>
+            <div>
+              <p class="project-type">CAD / product form</p>
               <h3>Custom Design Long Board</h3>
               <p>
-                A longboard concept modeled in Fusion 360. I used the project to explore form, proportion, and the path from a digital model to a physical product.
+                A Fusion 360 concept used to explore form, proportion, hardware placement, and the path from screen model to physical product.
               </p>
-              <ul class="tags">
-                <li>Fusion 360</li>
-                <li>CAD modeling</li>
-                <li>Product design</li>
-              </ul>
             </div>
           </article>
 
-          <article class="project-row reverse">
-            <figure class="image-stage portrait-image">
-              <img src="./assets/images/heart-necklace-v2.jpg" alt="Heart necklace made from aluminum">
+          <article class="project-card with-image">
+            <figure>
+              <img src="./assets/images/rustic-pipe-lamp.png" alt="Pipe lamp with dimmer switch">
             </figure>
-            <div class="project-copy">
-              <p class="project-kind">CAD / Metalwork</p>
-              <h3>Heart Necklace V2</h3>
-              <p>
-                I designed this in Fusion 360 and made it from aluminum plate. The scale made every edge, curve, and surface finish matter.
-              </p>
-              <ul class="tags">
-                <li>Aluminum</li>
-                <li>CAD to part</li>
-                <li>Hand finishing</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="project-row">
-            <figure class="image-stage portrait-image">
-              <img src="./assets/images/rustic-pipe-lamp.png" alt="Rustic pipe lamp">
-            </figure>
-            <div class="project-copy">
-              <p class="project-kind">Electrical / Product Build</p>
+            <div>
+              <p class="project-type">Electrical / object build</p>
               <h3>Rustic Pipe Lamp</h3>
               <p>
-                A functional lamp built from pipe hardware and wired with a dimmer switch. I wanted it to feel finished, useful, and mechanically honest.
+                A functional lamp assembled from pipe hardware and wired with a dimmer switch. Simple, physical, and useful.
               </p>
-              <ul class="tags">
-                <li>Electrical assembly</li>
-                <li>Dimmer switch</li>
-                <li>Object design</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <div class="small-projects">
-          <article>
-            <img src="./assets/images/ring-necklace.jpg" alt="Ring necklace">
-            <div>
-              <p class="project-kind">Materials</p>
-              <h3>Ring Necklace</h3>
-              <p>Titanium ring necklace with meteorite shavings and glow dust.</p>
-            </div>
-          </article>
-          <article>
-            <img src="./assets/images/earrings-v1.jpg" alt="Earrings prototype">
-            <div>
-              <p class="project-kind">Small-Scale Fabrication</p>
-              <h3>Earrings V1</h3>
-              <p>A compact jewelry prototype focused on shape, repeatability, and finish.</p>
             </div>
           </article>
         </div>
       </section>
 
       <section class="about" id="about" aria-labelledby="about-title">
-        <p class="kicker">About</p>
-        <div class="about-grid">
-          <h2 id="about-title">I like turning design decisions into physical prototypes.</h2>
-          <div>
-            <p>
-              I’m drawn to engineering work that moves from sketch to model to physical prototype. I like the point where a design has to survive real materials, real tolerances, real wiring, and real use.
-            </p>
-            <p>
-              The projects here come from school, personal work, and independent experimenting. Together they show the way I approach design: make it useful, make it clean, and keep improving it until it works.
-            </p>
-          </div>
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">I care about the point where a design has to work in the real world.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            I’m a mechanical engineer working in mechanical design and product development. My professional work has made me comfortable with CAD, drawings, manufacturing constraints, testing, root-cause work, and production feedback.
+          </p>
+          <p>
+            The projects here are personal, academic, and competition builds. That separation matters. This portfolio is about how I design and build when I have room to experiment.
+          </p>
+          <p>
+            Outside of engineering, I like woodworking, cooking, Formula 1, baseball, jazz, and making objects that feel good to use.
+          </p>
+        </div>
+      </section>
+
+      <section class="resume" id="resume" aria-labelledby="resume-title">
+        <div>
+          <p class="eyebrow">Resume</p>
+          <h2 id="resume-title">Mechanical engineer focused on product development and mechanical design.</h2>
+        </div>
+        <div class="resume-panel">
+          <p>
+            Current resume: mechanical engineer at Magna-Power Electronics, with prior design and prototyping work at Plug Power and Cadversity. Portfolio projects are kept separate from employer work.
+          </p>
+          <a class="button" href="https://drive.google.com/file/d/19wgv-1VMTOCVqtIuHqRdrhKzU3IokMuL/view">View resume</a>
         </div>
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div>
-          <p class="kicker">Contact</p>
-          <h2 id="contact-title">Open to design engineering, prototype engineering, product design, and mechanical engineering roles.</h2>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Get in touch.</h2>
         </div>
         <div class="contact-links">
-          <a class="button primary" href="mailto:joejoeleo00@gmail.com">joejoeleo00@gmail.com</a>
-          <a class="button" href="https://www.linkedin.com/in/joeleonardis/">LinkedIn</a>
-          <a class="button" href="https://github.com/joejoeleo">GitHub</a>
+          <a href="mailto:jtleonardis10@gmail.com">jtleonardis10@gmail.com</a>
+          <a href="https://www.linkedin.com/in/joeleonardis/">LinkedIn</a>
+          <a href="https://github.com/joejoeleo">GitHub</a>
         </div>
       </section>
 
-      <section class="archive" id="archive" aria-labelledby="archive-title">
+      <section class="archive" aria-labelledby="archive-title">
         <div>
-          <p class="kicker">Archive</p>
+          <p class="eyebrow">Archive</p>
           <h2 id="archive-title">Joe’s Builds</h2>
         </div>
-        <div>
-          <p>
-            The original Joe’s Builds site is preserved as a college-era snapshot.
-          </p>
-          <a class="text-link" href="../archive/source-snapshots/wix-public-html-2026-08-31.html">Open archived Wix snapshot</a>
-        </div>
+        <p>
+          The old Wix site is preserved separately as a college-era archive. This redesign does not use the old site structure.
+        </p>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Joseph Leonardis</p>
-      <p>Engineering Portfolio</p>
+      <span>Joseph Leonardis</span>
+      <span>Mechanical Design Portfolio</span>
     </footer>
   </body>
 </html>
