@@ -24,9 +24,6 @@ Avoid copy that explains the intended visitor reaction. Avoid portfolio-sales la
 | LED Study Table | Image card | Wix archive |
 | Custom Design Long Board | Image card | Wix archive |
 | Rustic Pipe Lamp | Image card | Wix archive |
-| Heart Necklace V2 | Image card | Wix archive |
-| Ring Necklace | Image card | Wix archive |
-| Earrings V1 | Image card | Wix archive |
 
 ## Writing Rule
 
