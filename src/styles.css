@@ -94,11 +94,11 @@ main,
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 0.72fr);
-  gap: clamp(34px, 6vw, 94px);
+  grid-template-columns: minmax(0, 0.74fr) minmax(420px, 0.76fr);
+  gap: clamp(34px, 5.5vw, 82px);
   align-items: end;
   min-height: calc(100vh - 64px);
-  padding: clamp(76px, 10vw, 136px) 0 44px;
+  padding: clamp(64px, 8vw, 112px) 0 clamp(38px, 5vw, 62px);
 }
 
 .hero-copy {
@@ -179,8 +179,8 @@ p {
 }
 
 .hero-media img {
-  height: min(72vh, 760px);
-  min-height: 520px;
+  height: min(68vh, 720px);
+  min-height: 500px;
   object-fit: cover;
   object-position: 58% 44%;
   transition: transform 500ms ease;
@@ -230,15 +230,20 @@ figcaption {
 .resume,
 .contact,
 .archive {
-  padding-bottom: clamp(86px, 11vw, 150px);
+  padding-bottom: clamp(70px, 8vw, 112px);
+}
+
+.flagship,
+.work {
+  padding-bottom: clamp(58px, 6vw, 86px);
 }
 
 .section-intro {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 0.54fr);
-  gap: clamp(34px, 6vw, 86px);
+  grid-template-columns: minmax(0, 0.8fr) minmax(360px, 0.52fr);
+  gap: clamp(30px, 5vw, 72px);
   align-items: end;
-  margin-bottom: 34px;
+  margin-bottom: clamp(24px, 3vw, 34px);
 }
 
 .section-intro h2 {
@@ -256,7 +261,7 @@ figcaption {
 
 .flagship-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 330px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 330px);
   gap: 18px;
   align-items: stretch;
 }
@@ -276,7 +281,8 @@ figcaption {
 }
 
 .final-shot {
-  height: 720px;
+  height: min(66vh, 660px);
+  min-height: 540px;
 }
 
 .final-shot img {
@@ -293,6 +299,9 @@ figcaption {
 }
 
 .project-facts div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 26px;
   background: var(--surface);
 }
@@ -309,8 +318,8 @@ figcaption {
 }
 
 .case-study article {
-  min-height: 310px;
-  padding: 28px;
+  min-height: 218px;
+  padding: 26px;
   background: var(--surface);
 }
 
@@ -320,13 +329,13 @@ figcaption {
 }
 
 .process-block {
-  margin-top: clamp(46px, 7vw, 86px);
+  margin-top: clamp(34px, 4.5vw, 56px);
 }
 
 .process-heading {
   display: grid;
   grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
-  gap: clamp(28px, 5vw, 74px);
+  gap: clamp(28px, 5vw, 68px);
   align-items: end;
   margin-bottom: 20px;
 }
@@ -405,8 +414,8 @@ figcaption {
 }
 
 .archive-process {
-  margin-top: clamp(34px, 5vw, 64px);
-  padding-top: clamp(28px, 4vw, 48px);
+  margin-top: clamp(28px, 4vw, 48px);
+  padding-top: clamp(24px, 3vw, 36px);
   border-top: 1px solid var(--line);
 }
 
@@ -414,33 +423,6 @@ figcaption {
   min-height: 0;
 }
 
-.media-pair {
-  display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(320px, 0.42fr);
-  gap: 18px;
-  margin-top: 18px;
-}
-
-.media-pair .product-shot {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  align-items: end;
-  height: 560px;
-  background: var(--charcoal);
-}
-
-.media-pair .product-shot img {
-  min-height: 0;
-  height: 100%;
-  object-position: 48% 50%;
-}
-
-.media-pair figcaption {
-  padding: 22px;
-  color: rgba(255, 255, 255, 0.68);
-}
-
-.notes-panel,
 .project-card,
 .resume-panel,
 .contact-links,
@@ -450,39 +432,15 @@ figcaption {
   border-radius: 8px;
 }
 
-.notes-panel {
-  padding: 30px;
-}
-
-.notes-panel ul {
-  display: grid;
-  gap: 14px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.notes-panel li {
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 18px;
-  font-weight: 680;
-}
-
-.notes-panel li:last-child {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
 .project-index {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  align-items: stretch;
 }
 
 .project-card {
-  min-height: 440px;
+  min-height: 320px;
   overflow: hidden;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
@@ -495,7 +453,7 @@ figcaption {
 
 .project-card.with-image {
   display: grid;
-  grid-template-rows: 300px 1fr;
+  grid-template-rows: 260px 1fr;
 }
 
 .project-card.with-image figure {
@@ -550,10 +508,17 @@ figcaption {
 .archive {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(340px, 0.58fr);
-  gap: clamp(34px, 6vw, 88px);
+  gap: clamp(30px, 5vw, 76px);
   align-items: start;
   border-top: 1px solid var(--line);
-  padding-top: clamp(70px, 9vw, 118px);
+  padding-top: clamp(58px, 7vw, 88px);
+}
+
+.about,
+.resume,
+.contact {
+  padding-top: clamp(48px, 5.5vw, 70px);
+  padding-bottom: clamp(48px, 5.5vw, 70px);
 }
 
 .about h2,
@@ -630,7 +595,6 @@ figcaption {
   .hero,
   .section-intro,
   .flagship-grid,
-  .media-pair,
   .process-heading,
   .about,
   .resume,
@@ -718,9 +682,7 @@ figcaption {
   }
 
   .hero-media img,
-  .media-pair .product-shot img,
-  .final-shot,
-  .media-pair .product-shot {
+  .final-shot {
     height: 360px;
     min-height: 0;
   }
@@ -737,8 +699,7 @@ figcaption {
   .project-facts,
   .case-study,
   .project-index,
-  .process-grid,
-  .media-pair .product-shot {
+  .process-grid {
     grid-template-columns: 1fr;
   }
 
