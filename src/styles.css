@@ -98,15 +98,16 @@ main,
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 0.64fr);
-  gap: clamp(42px, 7vw, 104px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.6fr);
+  gap: clamp(38px, 7vw, 96px);
   align-items: start;
-  min-height: min(560px, calc(100vh - 64px));
-  padding: clamp(72px, 9vw, 118px) 0 clamp(54px, 6vw, 76px);
+  min-height: auto;
+  padding: clamp(62px, 8vw, 104px) 0 clamp(46px, 5.5vw, 68px);
 }
 
 .hero-copy {
-  padding-bottom: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
 }
 
 .eyebrow,
@@ -186,13 +187,13 @@ figcaption {
 }
 
 .intro-panel h2 {
-  margin-bottom: 22px;
-  font-size: 31px;
+  margin-bottom: 20px;
+  font-size: 30px;
   line-height: 1.12;
 }
 
 .intro-panel p:not(.eyebrow) {
-  margin-bottom: 18px;
+  margin-bottom: 0;
   font-size: 17px;
   line-height: 1.58;
 }
