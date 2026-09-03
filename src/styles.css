@@ -606,6 +606,11 @@ p {
   object-fit: cover;
 }
 
+.media-grid.compact .media-item img {
+  object-fit: contain;
+  background: #edece6;
+}
+
 .media-item video {
   background: #101214;
   object-fit: contain;
@@ -638,6 +643,10 @@ p {
 .compact-detail .hero-media {
   height: 420px;
   margin-bottom: 30px;
+}
+
+.compact-detail .media-section {
+  margin-top: 32px;
 }
 
 @media (max-width: 1080px) {
