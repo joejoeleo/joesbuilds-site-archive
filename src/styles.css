@@ -182,15 +182,49 @@ p {
   border-radius: 8px;
 }
 
-.hero-media img {
+.hero-mosaic {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
   height: min(56vh, 560px);
   min-height: 400px;
+  padding: 10px;
+}
+
+.hero-tile {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #dddbd3;
+  border-radius: 6px;
+}
+
+.hero-tile-large {
+  grid-row: span 2;
+}
+
+.hero-tile img {
+  height: 100%;
   object-fit: cover;
-  object-position: 58% 44%;
+  object-position: 50% 50%;
   transition: transform 500ms ease;
 }
 
-.hero-media:hover img {
+.hero-tile-large img {
+  object-position: 50% 58%;
+}
+
+.hero-tile:nth-child(2) img {
+  object-position: 50% 55%;
+}
+
+.hero-tile:nth-child(3) img {
+  height: 118%;
+  object-position: 50% 34%;
+}
+
+.hero-media:hover .hero-tile img {
   transform: scale(1.018);
 }
 
@@ -200,7 +234,7 @@ figcaption {
   line-height: 1.35;
 }
 
-.hero-media figcaption {
+.hero-tile figcaption {
   position: absolute;
   right: 16px;
   bottom: 14px;
@@ -600,7 +634,7 @@ figcaption {
     min-height: auto;
   }
 
-  .hero-media img,
+  .hero-mosaic,
   .final-shot {
     height: 520px;
     min-height: 0;
@@ -666,19 +700,30 @@ figcaption {
     font-size: 16px;
   }
 
-  .hero-media img,
+  .hero-mosaic,
   .final-shot {
     height: 360px;
     min-height: 0;
   }
 
-  .hero-media figcaption {
-    position: static;
-    margin: 0;
-    padding: 12px 14px;
-    background: #fff;
-    border: 0;
-    border-radius: 0;
+  .hero-mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.1fr 0.9fr;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .hero-tile-large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .hero-tile figcaption {
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+    padding: 6px 8px;
+    font-size: 11px;
   }
 
   .project-facts,
