@@ -283,20 +283,12 @@ p {
   outline: none;
 }
 
-.gallery-card.featured {
-  grid-column: span 2;
-}
-
 .gallery-card figure,
 .type-tile {
   margin: 0;
-  height: 250px;
+  height: 260px;
   overflow: hidden;
   background: #e7e5dd;
-}
-
-.gallery-card.featured figure {
-  height: 390px;
 }
 
 .gallery-card img {
@@ -673,10 +665,6 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .gallery-card.featured {
-    grid-column: span 2;
-  }
-
   .project-sidebar {
     position: static;
   }
@@ -749,17 +737,11 @@ p {
     grid-template-columns: 1fr;
   }
 
-  .gallery-card,
-  .gallery-card.featured {
-    grid-column: span 1;
-  }
-
   .gallery-card {
     min-height: auto;
   }
 
   .gallery-card figure,
-  .gallery-card.featured figure,
   .type-tile {
     height: 238px;
   }
