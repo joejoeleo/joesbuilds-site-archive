@@ -98,11 +98,11 @@ main,
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.78fr) minmax(380px, 0.72fr);
-  gap: clamp(34px, 5.5vw, 76px);
-  align-items: center;
-  min-height: min(700px, calc(100vh - 64px));
-  padding: clamp(48px, 7vw, 86px) 0 clamp(42px, 5vw, 64px);
+  grid-template-columns: minmax(0, 0.86fr) minmax(360px, 0.64fr);
+  gap: clamp(42px, 7vw, 104px);
+  align-items: start;
+  min-height: min(560px, calc(100vh - 64px));
+  padding: clamp(72px, 9vw, 118px) 0 clamp(54px, 6vw, 76px);
 }
 
 .hero-copy {
@@ -169,63 +169,8 @@ p {
 .hero-copy p:last-child {
   max-width: 610px;
   margin-bottom: 0;
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.48;
-}
-
-.hero-media {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  background: #e8e6df;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.hero-mosaic {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  height: min(56vh, 560px);
-  min-height: 400px;
-  padding: 10px;
-}
-
-.hero-tile {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  background: #dddbd3;
-  border-radius: 6px;
-}
-
-.hero-tile-large {
-  grid-row: span 2;
-}
-
-.hero-tile img {
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  transition: transform 500ms ease;
-}
-
-.hero-tile-large img {
-  object-position: 50% 58%;
-}
-
-.hero-tile:nth-child(2) img {
-  object-position: 50% 55%;
-}
-
-.hero-tile:nth-child(3) img {
-  height: 118%;
-  object-position: 50% 34%;
-}
-
-.hero-media:hover .hero-tile img {
-  transform: scale(1.018);
 }
 
 figcaption {
@@ -234,16 +179,26 @@ figcaption {
   line-height: 1.35;
 }
 
-.hero-tile figcaption {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-  padding: 7px 10px;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  border-radius: 999px;
-  color: #41464c;
-  backdrop-filter: blur(14px);
+.intro-panel {
+  max-width: 480px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.intro-panel h2 {
+  margin-bottom: 22px;
+  font-size: 31px;
+  line-height: 1.12;
+}
+
+.intro-panel p:not(.eyebrow) {
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 1.58;
+}
+
+.intro-panel p:last-child {
+  margin-bottom: 0;
 }
 
 .project-facts span {
@@ -264,7 +219,6 @@ figcaption {
 
 .flagship,
 .work,
-.about,
 .resume,
 .contact {
   padding-bottom: clamp(70px, 8vw, 112px);
@@ -534,7 +488,6 @@ figcaption {
   text-transform: uppercase;
 }
 
-.about,
 .resume,
 .contact {
   display: grid;
@@ -545,20 +498,17 @@ figcaption {
   padding-top: clamp(58px, 7vw, 88px);
 }
 
-.about,
 .resume,
 .contact {
   padding-top: clamp(48px, 5.5vw, 70px);
   padding-bottom: clamp(48px, 5.5vw, 70px);
 }
 
-.about h2,
 .resume h2,
 .contact h2 {
   max-width: 820px;
 }
 
-.about-copy p:last-child,
 .resume-panel p {
   margin-bottom: 0;
 }
@@ -616,7 +566,6 @@ figcaption {
   .section-intro,
   .flagship-grid,
   .process-heading,
-  .about,
   .resume,
   .contact {
     grid-template-columns: 1fr;
@@ -634,7 +583,10 @@ figcaption {
     min-height: auto;
   }
 
-  .hero-mosaic,
+  .intro-panel {
+    max-width: 720px;
+  }
+
   .final-shot {
     height: 520px;
     min-height: 0;
@@ -700,30 +652,9 @@ figcaption {
     font-size: 16px;
   }
 
-  .hero-mosaic,
   .final-shot {
     height: 360px;
     min-height: 0;
-  }
-
-  .hero-mosaic {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1.1fr 0.9fr;
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .hero-tile-large {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
-  .hero-tile figcaption {
-    right: 10px;
-    bottom: 10px;
-    max-width: calc(100% - 20px);
-    padding: 6px 8px;
-    font-size: 11px;
   }
 
   .project-facts,
@@ -761,7 +692,6 @@ figcaption {
     grid-template-rows: 240px auto;
   }
 
-  .about,
   .resume,
   .contact {
     gap: 24px;
