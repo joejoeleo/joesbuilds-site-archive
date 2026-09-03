@@ -7,6 +7,7 @@
   --line: #deddd8;
   --blue: #285f87;
   --blue-soft: #dfeaf0;
+  --band: rgba(255, 255, 255, 0.56);
   --charcoal: #111316;
   --max: 1180px;
   --wide: 1240px;
@@ -42,6 +43,10 @@ img {
 
 section {
   scroll-margin-top: 88px;
+}
+
+section[id] {
+  isolation: isolate;
 }
 
 .site-header {
@@ -102,7 +107,7 @@ main,
   gap: clamp(38px, 7vw, 96px);
   align-items: start;
   min-height: auto;
-  padding: clamp(62px, 8vw, 104px) 0 clamp(46px, 5.5vw, 68px);
+  padding: clamp(52px, 6vw, 76px) 0 clamp(46px, 5.5vw, 68px);
 }
 
 .hero-copy {
@@ -222,7 +227,23 @@ figcaption {
 .work,
 .resume,
 .contact {
-  padding-bottom: clamp(70px, 8vw, 112px);
+  position: relative;
+  padding-top: clamp(58px, 6.8vw, 92px);
+  padding-bottom: clamp(74px, 8vw, 112px);
+}
+
+.flagship::before,
+.work::before,
+.resume::before,
+.contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
 }
 
 .flagship,
@@ -230,12 +251,21 @@ figcaption {
   padding-bottom: clamp(58px, 6vw, 86px);
 }
 
+.work,
+.contact {
+  background: var(--band);
+  box-shadow: 0 0 0 100vmax var(--band);
+  clip-path: inset(0 -100vmax);
+}
+
 .section-intro {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(360px, 0.52fr);
   gap: clamp(30px, 5vw, 72px);
-  align-items: end;
-  margin-bottom: clamp(24px, 3vw, 34px);
+  align-items: start;
+  margin-bottom: clamp(30px, 3.8vw, 46px);
+  padding-bottom: clamp(22px, 3vw, 32px);
+  border-bottom: 1px solid var(--line);
 }
 
 .section-intro h2 {
@@ -316,15 +346,17 @@ figcaption {
 }
 
 .process-block {
-  margin-top: clamp(34px, 4.5vw, 56px);
+  margin-top: clamp(46px, 5.6vw, 72px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--line);
 }
 
 .process-heading {
   display: grid;
   grid-template-columns: minmax(0, 0.58fr) minmax(320px, 0.42fr);
   gap: clamp(28px, 5vw, 68px);
-  align-items: end;
-  margin-bottom: 20px;
+  align-items: start;
+  margin-bottom: clamp(20px, 2.6vw, 30px);
 }
 
 .process-heading h3 {
@@ -401,9 +433,7 @@ figcaption {
 }
 
 .earlier-process {
-  margin-top: clamp(28px, 4vw, 48px);
-  padding-top: clamp(24px, 3vw, 36px);
-  border-top: 1px solid var(--line);
+  margin-top: clamp(42px, 5vw, 64px);
 }
 
 .compact-process .process-item {
@@ -495,14 +525,18 @@ figcaption {
   grid-template-columns: minmax(0, 0.82fr) minmax(340px, 0.58fr);
   gap: clamp(30px, 5vw, 76px);
   align-items: start;
-  border-top: 1px solid var(--line);
-  padding-top: clamp(58px, 7vw, 88px);
 }
 
 .resume,
 .contact {
-  padding-top: clamp(48px, 5.5vw, 70px);
-  padding-bottom: clamp(48px, 5.5vw, 70px);
+  padding-top: clamp(52px, 6vw, 76px);
+  padding-bottom: clamp(52px, 6vw, 76px);
+}
+
+.resume > div:first-child,
+.contact > div:first-child {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
 }
 
 .resume h2,
@@ -628,7 +662,26 @@ figcaption {
   }
 
   .hero {
+    gap: 28px;
+    padding-top: 44px;
+    padding-bottom: 40px;
+  }
+
+  .hero-copy,
+  .intro-panel {
+    padding-top: 20px;
+  }
+
+  .flagship,
+  .work {
+    padding-top: 50px;
+    padding-bottom: 54px;
+  }
+
+  .resume,
+  .contact {
     padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   h1 {
