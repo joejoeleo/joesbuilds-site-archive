@@ -56,6 +56,10 @@ http://127.0.0.1:4173/
 
 On Windows, use `python -m http.server 4173 --bind 127.0.0.1` from `src/`. Refresh the browser after editing; the static server does not provide hot reload.
 
+## Live site
+
+The GitHub Pages workflow publishes the exact contents of `src/` whenever `main` changes. Enable Pages with the **GitHub Actions** source in the repository settings if it is not already enabled. The resulting public URL is shown by the completed workflow.
+
 ## Validation
 
 From the repository root:
