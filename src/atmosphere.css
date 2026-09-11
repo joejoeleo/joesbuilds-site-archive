@@ -89,6 +89,11 @@ html[data-entrance] .launch-panel.is-active .object-stage, html[data-entrance] .
   body:not(.motion-paused) .launch-panel.is-active .object-stage { animation-duration: 1250ms; animation-delay: 80ms; }
 }
 @media (max-width: 900px) {
+  /* Keep the decorative grid inside the page gutters, without sideways scrolling. */
+  .object-stage::before { inset: -16px; }
+  .view-switch { gap: 2px; }
+  .view-switch button { min-width: 0; min-height: 48px; padding: 5px 2px 9px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; white-space: nowrap; }
+  .view-number { font-size: 10px; color: var(--secondary); }
   #engineering-field { opacity: .5; mask-image: linear-gradient(90deg, #0007, #000); }
   .project-prologue { gap: 28px; }
   .intent-copy h2 { font-size: clamp(34px,5vw,48px); }
@@ -96,6 +101,8 @@ html[data-entrance] .launch-panel.is-active .object-stage, html[data-entrance] .
   .bridge-cross { display: none; }
 }
 @media (max-width: 600px) {
+  .intent-node { gap: 12px; padding: 14px 12px; }
+  .intent-system { padding: 20px 14px; }
   .ambient-wash { background: radial-gradient(ellipse 86vw 50vh at 90% 48%, #ef9b4226, transparent 100%); }
   .object-stage::after { background: radial-gradient(ellipse 86vw 50vh at var(--reflection-x,90vw) var(--reflection-y,48vh), #ffc47b14, transparent 100%); }
   .project-prologue { grid-template-columns: 1fr; gap: 28px; padding-top: 4px; }
