@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+  <head><meta name="theme-color" content="#090B0C"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23090B0C%27/%3E%3Ctext x=%278%27 y=%2746%27 font-size=%2739%27 font-family=%27Arial%27 fill=%27%23FF4D00%27%3EJL%3C/text%3E%3C/svg%3E">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Joseph Leonardis | Engineering Portfolio</title>
@@ -8,142 +8,156 @@
       name="description"
       content="Engineering portfolio by Joseph Leonardis: mechanical design, prototypes, furniture, lighting, controls, CAD, and fabrication."
     >
-    <link rel="stylesheet" href="./styles.css?v=20260903-built-copy">
+    <link rel="preload" href="./assets/fonts/Outfit-Variable.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="./styles.css?v=20260909-launch">
+    <link rel="stylesheet" href="./depth.css?v=20260909-atmosphere">
+    <link rel="stylesheet" href="./atmosphere.css?v=20260910-no-card-outline">
+    <script>
+      // Runs before paint; CSS also dismisses the entrance if later scripts fail.
+      try {
+        const quiet = matchMedia("(prefers-reduced-motion: reduce)").matches || localStorage.getItem("jl-portfolio-motion") === "paused";
+        const returning = performance.getEntriesByType("navigation")[0]?.type === "back_forward";
+        if (!quiet && !returning && (!location.hash || location.hash === "#top")) {
+          document.documentElement.dataset.entrance = sessionStorage.getItem("jl-visited") ? "return" : "first";
+          sessionStorage.setItem("jl-visited", "yes");
+        }
+      } catch {}
+    </script>
   </head>
   <body>
+    <div class="atmosphere" aria-hidden="true"><div class="ambient-wash"></div><canvas id="engineering-field"></canvas></div>
+    <div class="site-entrance" aria-hidden="true">
+      <div class="entrance-curtain entrance-upper"></div><div class="entrance-curtain entrance-lower"></div>
+      <div class="entrance-signature"><span class="entrance-monogram">JL<span>+</span></span><span class="entrance-credit">Designed and built by<br><strong>Joseph Leonardis.</strong></span></div>
+      <span class="entrance-line"></span>
+    </div>
+    <a class="skip-link" href="#projects">Skip to projects</a>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Joseph Leonardis home">
-        <span>Joseph Leonardis</span>
-        <small>Engineering Portfolio</small>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="brand" href="#top" aria-label="Joseph Leonardis home"><span class="brand-mark" aria-hidden="true">JL<span>↗</span></span><span class="brand-name">JOSEPH LEONARDIS<small>Mechanical engineer · New Jersey</small></span></a>
+      <nav class="nav" aria-label="Primary navigation"><a href="#projects">Work <sup>06</sup></a><a href="#about">About</a><a href="#contact">Contact ↗</a></nav>
+      <button class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause visual effects"><span class="status-dot" aria-hidden="true"></span><span id="motion-label">Motion on</span></button>
     </header>
-
     <main id="top">
-      <section class="hero" id="about" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Engineering Portfolio</p>
-          <h1 id="hero-title">Joseph Leonardis</h1>
-          <p>
-            <strong>Mechanical engineer based in New Jersey.</strong>
-          </p>
-        </div>
-        <aside class="intro-panel" aria-label="About Joseph Leonardis">
-          <p class="eyebrow">About</p>
-          <h2>Mechanical design, prototyping, fabrication, and product development.</h2>
-          <p>
-            Welcome to my personal engineering portfolio. This site is a collection of recent projects I have designed and built.
-          </p>
+      <div class="launch-layout" id="projects">
+        <aside class="project-index" aria-label="Project index">
+          <div class="index-heading"><span class="eyebrow">SELECTED BUILDS</span><span class="index-total">01—06</span></div>
+          <nav class="project-menu" aria-label="Jump to a project">
+            <a href="#launch-infinity" aria-current="location"><span class="menu-number">01</span><span>Infinity Entertainment Table<small>RIT senior capstone</small></span><i aria-hidden="true">↗</i></a>
+            <a href="#launch-lumen"><span class="menu-number">02</span><span>Lumen River Desk<small>+ Touchscreen interface</small></span><i aria-hidden="true">↗</i></a>
+            <a href="#launch-water-dispenser"><span class="menu-number">03</span><span>Alexa-Powered Water Dispenser</span><i aria-hidden="true">↗</i></a>
+            <a href="#launch-study-table"><span class="menu-number">04</span><span>LED Study Table</span><i aria-hidden="true">↗</i></a>
+            <a href="#launch-pipe-lamp"><span class="menu-number">05</span><span>Rustic Pipe Lamp</span><i aria-hidden="true">↗</i></a>
+            <a href="#launch-ring-necklace"><span class="menu-number">06</span><span>Custom Ring Necklace</span><i aria-hidden="true">↗</i></a>
+          </nav>
+          <div class="index-foot"><span class="index-rule" aria-hidden="true"></span><p>Physical objects.<br>From the first sketch<br>to the finished build.</p><a href="#contact">Joseph Leonardis <span aria-hidden="true">↗</span></a></div>
         </aside>
-      </section>
-
-      <section class="projects" id="projects" aria-labelledby="projects-title">
-        <div class="section-intro">
-          <div>
-            <p class="eyebrow">Projects</p>
-            <h2 id="projects-title">Project Gallery</h2>
-          </div>
-          <p>
-            Mechanical builds, control interfaces, furniture, lighting, CAD, and fabrication work.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <button class="gallery-card featured" type="button" data-project="infinity">
-            <figure>
-              <img src="./assets/images/capstone.jpg" alt="Finished Infinity Entertainment Table capstone build">
-            </figure>
-            <span>RIT Senior Capstone</span>
-            <h3>Infinity Entertainment Table</h3>
-            <p>Touchscreen controls, infinity lighting, drink dispensing, and integrated can crusher.</p>
-          </button>
-
-          <button class="gallery-card" type="button" data-project="lumen">
-            <div class="type-tile">
-              <span>UI</span>
+        <div class="launch-reel">
+          <section class="launch-panel is-active" id="launch-infinity" aria-labelledby="launch-infinity-title">
+            <div class="chapter-line"><span>01 / MECHANICAL DESIGN + CONTROLS</span><span>RIT CAPSTONE</span></div>
+            <div class="launch-composition">
+              <div class="launch-copy">
+                <p class="launch-kicker"><span aria-hidden="true">+</span> THE INFINITY ENTERTAINMENT TABLE</p>
+                <h1 id="launch-infinity-title">A table.<br><span>A lot more</span><br>underneath.</h1>
+                <p class="launch-description">Infinity lighting. Drink dispensing. A can crusher. All controlled from one touchscreen.</p>
+                <button class="primary-button" type="button" data-project="infinity">Explore the build <span aria-hidden="true">↗</span></button>
+                <div class="launch-credit"><span class="eyebrow">MY ROLE</span><p>Project manager &amp; lead designer</p></div>
+              </div>
+              <div class="object-stage" id="specimen">
+                <div class="stage-coordinate" aria-hidden="true">FIG. 01 / INFINITY</div>
+                <div class="hero-object" id="specimen-media">
+                  <img id="specimen-image" src="./assets/images/capstone.jpg" alt="Completed Infinity Entertainment Table with bottles and touchscreen beneath the clear tabletop" width="2203" height="2440" fetchpriority="high">
+                  <video id="specimen-film" src="./assets/videos/infinity/mark-3-final-product.mp4" poster="./assets/images/infinity/poster-mark-3-final-product.jpg" controls preload="none" playsinline muted hidden aria-label="Real footage of the completed Infinity Table touchscreen and drink dispenser"></video>
+                  <button class="object-open" type="button" data-project="infinity" aria-label="Explore the Infinity Entertainment Table build">↗</button>
+                </div>
+                <div class="object-caption"><span class="live-mark" aria-hidden="true"></span><span id="view-label" aria-live="polite">Completed build / Mark 3</span><span aria-hidden="true">+</span></div>
+                <div class="view-switch" role="group" aria-label="Infinity Table view"><button type="button" data-view="built" aria-pressed="true">01 Built</button><button type="button" data-view="inside" aria-pressed="false">02 Inside</button><button type="button" data-view="cad" aria-pressed="false">03 CAD</button><button type="button" data-view="film" aria-pressed="false">04 In use</button></div>
+              </div>
             </div>
-            <span>Furniture / Interface</span>
-            <h3>Lumen River Desk + Touchscreen Interface</h3>
-            <p>LED epoxy river desk with an integrated 7-inch computer control interface.</p>
-          </button>
+            <div class="chapter-footer"><span>FUSION 360 <b>·</b> FABRICATION <b>·</b> EMBEDDED SYSTEMS</span><a href="#launch-lumen">Next: Lumen River Desk <span aria-hidden="true">↓</span></a></div>
+          </section>
 
-          <button class="gallery-card" type="button" data-project="water-dispenser">
-            <div class="type-tile">
-              <span>Arduino</span>
+          <section class="launch-panel" id="launch-lumen" aria-labelledby="launch-lumen-title">
+            <div class="chapter-line"><span>02 / FURNITURE + INTERFACE</span><span>PERSONAL BUILD</span></div>
+            <div class="launch-composition">
+              <div class="launch-copy"><p class="launch-kicker"><span aria-hidden="true">+</span> LUMEN RIVER DESK</p><h2 id="launch-lumen-title">The desk.<br><span>And its</span><br>control center.</h2><p class="launch-description">An LED epoxy river desk with a 7-inch touchscreen for PC monitoring, media, and lighting.</p><button class="primary-button" type="button" data-project="lumen">Explore the build <span aria-hidden="true">↗</span></button><div class="launch-credit"><span class="eyebrow">THE CONNECTION</span><p>Furniture, electronics, and interface design.</p></div></div>
+              <div class="object-stage diagram-stage">
+                <div class="stage-coordinate" aria-hidden="true">FIG. 02 / SYSTEM OVERVIEW</div>
+                <div class="technical-surface hero-object" role="img" aria-label="System diagram: a 7-inch touch interface connects to PC monitoring, media controls, and desk lighting">
+                  <div class="diagram-top"><span>INTERFACE / 7 IN.</span><span aria-hidden="true">+</span></div>
+                  <div class="touch-node"><span class="eyebrow">INPUT</span><strong>Touch.</strong><span>ONE INTERFACE / THREE FUNCTIONS</span></div>
+                  <div class="connection-tree" aria-hidden="true"><i></i></div>
+                  <div class="node-row"><div><span>01</span><strong>PC</strong><small>Monitoring</small></div><div><span>02</span><strong>Media</strong><small>Controls</small></div><div><span>03</span><strong>Light</strong><small>Desk LEDs</small></div></div>
+                  <div class="diagram-bottom"><span>TOUCHSCREEN → DESK SYSTEMS</span><span aria-hidden="true">↗</span></div>
+                </div>
+                <div class="object-caption"><span class="live-mark" aria-hidden="true"></span><span>System diagram / project photography to follow</span><span aria-hidden="true">+</span></div>
+              </div>
             </div>
-            <span>Controls</span>
-            <h3>Alexa-Powered Water Dispenser</h3>
-            <p>Desk water dispenser controlled with Arduino and Alexa voice commands.</p>
-          </button>
+            <div class="chapter-footer"><span>EPOXY <b>·</b> LIGHTING <b>·</b> TOUCHSCREEN INTERFACE</span><a href="#launch-water-dispenser">Next: Water Dispenser <span aria-hidden="true">↓</span></a></div>
+          </section>
 
-          <button class="gallery-card" type="button" data-project="study-table">
-            <figure>
-              <img src="./assets/images/study-table/finish.jpg" alt="Finished LED study table attached to a desk">
-            </figure>
-            <span>Furniture / Lighting</span>
-            <h3>LED Study Table</h3>
-            <p>Desk extension with lighting built into the work surface.</p>
-          </button>
+          <section class="launch-panel" id="launch-water-dispenser" aria-labelledby="launch-water-title">
+            <div class="chapter-line"><span>03 / ELECTRONICS + AUTOMATION</span><span>PERSONAL BUILD</span></div>
+            <div class="launch-composition">
+              <div class="launch-copy"><p class="launch-kicker"><span aria-hidden="true">+</span> ALEXA-POWERED WATER DISPENSER</p><h2 id="launch-water-title">A voice.<br><span>A circuit.</span><br>A glass of water.</h2><p class="launch-description">A desk water dispenser that connects Alexa voice commands to an Arduino-controlled pump.</p><button class="primary-button" type="button" data-project="water-dispenser">Explore the build <span aria-hidden="true">↗</span></button><div class="launch-credit"><span class="eyebrow">THE SYSTEM</span><p>Voice control meets a physical mechanism.</p></div></div>
+              <div class="object-stage diagram-stage">
+                <div class="stage-coordinate" aria-hidden="true">FIG. 03 / SYSTEM OVERVIEW</div>
+                <div class="technical-surface hero-object water-system" role="img" aria-label="System diagram: Alexa voice command to Arduino controller to pump and water tubing">
+                  <div class="diagram-top"><span>COMMAND → ACTION</span><span aria-hidden="true">+</span></div>
+                  <div class="sequence-node"><span class="sequence-index">01</span><div><small>INPUT</small><strong>Alexa.</strong><p>Voice command</p></div><span aria-hidden="true">↓</span></div>
+                  <div class="sequence-node"><span class="sequence-index">02</span><div><small>CONTROL</small><strong>Arduino.</strong><p>Electronic control</p></div><span aria-hidden="true">↓</span></div>
+                  <div class="sequence-node"><span class="sequence-index">03</span><div><small>OUTPUT</small><strong>Water.</strong><p>Pump &amp; tubing</p></div><span aria-hidden="true">↗</span></div>
+                  <div class="diagram-bottom"><span>VOICE / CONTROL / DISPENSING</span><span aria-hidden="true">+</span></div>
+                </div>
+                <div class="object-caption"><span class="live-mark" aria-hidden="true"></span><span>System diagram / project photography to follow</span><span aria-hidden="true">+</span></div>
+              </div>
+            </div>
+            <div class="chapter-footer"><span>ALEXA <b>·</b> ARDUINO <b>·</b> FLUID ROUTING</span><a href="#launch-study-table">Next: LED Study Table <span aria-hidden="true">↓</span></a></div>
+          </section>
 
-          <button class="gallery-card" type="button" data-project="pipe-lamp">
-            <figure>
-              <img src="./assets/images/pipe-lamp/final.png" alt="Finished pipe lamp with dimmer switch">
-            </figure>
-            <span>Lighting / Electrical</span>
-            <h3>Rustic Pipe Lamp</h3>
-            <p>Pipe-hardware lamp with an integrated dimmer switch.</p>
-          </button>
+          <section class="launch-panel" id="launch-study-table" aria-labelledby="launch-study-title">
+            <div class="chapter-line"><span>04 / FURNITURE + LIGHTING</span><span>PERSONAL BUILD</span></div>
+            <div class="launch-composition">
+              <div class="launch-copy"><p class="launch-kicker"><span aria-hidden="true">+</span> LED STUDY TABLE</p><h2 id="launch-study-title">Built for<br><span>the late</span><br>nights.</h2><p class="launch-description">A custom desk extension with a wood frame, plexiglass surface, and integrated LED lighting.</p><button class="primary-button" type="button" data-project="study-table">Explore the build <span aria-hidden="true">↗</span></button><div class="launch-credit"><span class="eyebrow">THE MATERIALS</span><p>Wood. Plexiglass. Light.</p></div></div>
+              <div class="object-stage"><div class="stage-coordinate" aria-hidden="true">FIG. 04 / STUDY TABLE</div><div class="hero-object"><img src="./assets/images/study-table/finish.jpg" alt="Joseph's completed LED Study Table with its illuminated work surface" loading="lazy" decoding="async"><button class="object-open" type="button" data-project="study-table" aria-label="Explore the LED Study Table build">↗</button></div><div class="object-caption"><span class="live-mark" aria-hidden="true"></span><span>Completed build / original photograph</span><span aria-hidden="true">+</span></div></div>
+            </div>
+            <div class="chapter-footer"><span>WOODWORKING <b>·</b> PLEXIGLASS <b>·</b> LED INTEGRATION</span><a href="#launch-pipe-lamp">Next: Rustic Pipe Lamp <span aria-hidden="true">↓</span></a></div>
+          </section>
 
-          <button class="gallery-card" type="button" data-project="ring-necklace">
-            <figure>
-              <img src="./assets/images/ring-necklace/final.jpg" alt="Finished custom ring necklace">
-            </figure>
-            <span>Materials / Detail Work</span>
-            <h3>Custom Ring Necklace</h3>
-            <p>Titanium ring with meteorite shavings and glow dust integrated into the blank.</p>
-          </button>
-        </div>
-      </section>
+          <section class="launch-panel" id="launch-pipe-lamp" aria-labelledby="launch-lamp-title">
+            <div class="chapter-line"><span>05 / LIGHTING + ASSEMBLY</span><span>PERSONAL BUILD</span></div>
+            <div class="launch-composition">
+              <div class="launch-copy"><p class="launch-kicker"><span aria-hidden="true">+</span> RUSTIC PIPE LAMP</p><h2 id="launch-lamp-title">Ordinary parts.<br><span>A different</span><br>light.</h2><p class="launch-description">A lamp assembled from pipe fittings, with exposed hardware and an integrated dimmer.</p><button class="primary-button" type="button" data-project="pipe-lamp">Explore the build <span aria-hidden="true">↗</span></button><div class="launch-credit"><span class="eyebrow">THE DETAILS</span><p>Threaded fittings. Routed wiring. Dimmable light.</p></div></div>
+              <div class="object-stage"><div class="stage-coordinate" aria-hidden="true">FIG. 05 / PIPE LAMP</div><div class="hero-object"><img src="./assets/images/pipe-lamp/final.png" alt="Joseph's finished Rustic Pipe Lamp assembled from pipe fittings with a dimmer" loading="lazy" decoding="async"><button class="object-open" type="button" data-project="pipe-lamp" aria-label="Explore the Rustic Pipe Lamp build">↗</button></div><div class="object-caption"><span class="live-mark" aria-hidden="true"></span><span>Completed build / original photograph</span><span aria-hidden="true">+</span></div></div>
+            </div>
+            <div class="chapter-footer"><span>PIPE FITTINGS <b>·</b> WIRING <b>·</b> DIMMER CONTROL</span><a href="#launch-ring-necklace">Next: Custom Ring Necklace <span aria-hidden="true">↓</span></a></div>
+          </section>
 
-      <section class="resume" id="resume" aria-labelledby="resume-title">
-        <div>
-          <p class="eyebrow">Resume</p>
-          <h2 id="resume-title">Resume</h2>
+          <section class="launch-panel" id="launch-ring-necklace" aria-labelledby="launch-ring-title">
+            <div class="chapter-line"><span>06 / MATERIALS + DETAIL WORK</span><span>PERSONAL BUILD</span></div>
+            <div class="launch-composition">
+              <div class="launch-copy"><p class="launch-kicker"><span aria-hidden="true">+</span> CUSTOM RING NECKLACE</p><h2 id="launch-ring-title">Small scale.<br><span>Every detail</span><br>counts.</h2><p class="launch-description">A titanium ring necklace with meteorite and glow dust inlay, assembled and finished by hand.</p><button class="primary-button" type="button" data-project="ring-necklace">Explore the build <span aria-hidden="true">↗</span></button><div class="launch-credit"><span class="eyebrow">THE MATERIALS</span><p>Titanium. Meteorite. Glow dust.</p></div></div>
+              <div class="object-stage"><div class="stage-coordinate" aria-hidden="true">FIG. 06 / RING NECKLACE</div><div class="hero-object ring-object"><img src="./assets/images/ring-necklace/final.jpg" alt="Joseph's finished titanium ring necklace with meteorite and glow dust inlay" loading="lazy" decoding="async"><button class="object-open" type="button" data-project="ring-necklace" aria-label="Explore the Custom Ring Necklace build">↗</button></div><div class="object-caption"><span class="live-mark" aria-hidden="true"></span><span>Completed build / original photograph</span><span aria-hidden="true">+</span></div></div>
+            </div>
+            <div class="chapter-footer"><span>TITANIUM <b>·</b> METEORITE <b>·</b> HAND FINISHING</span><a href="#about">Meet the engineer <span aria-hidden="true">↓</span></a></div>
+          </section>
         </div>
-        <div class="resume-panel">
-          <p>
-            Mechanical Engineer / Product Development / Mechanical Design
-          </p>
-          <a class="button" href="https://drive.google.com/file/d/19wgv-1VMTOCVqtIuHqRdrhKzU3IokMuL/view">View resume</a>
-        </div>
-      </section>
+      </div>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Contact</h2>
-        </div>
-        <div class="contact-links">
-          <a href="mailto:jtleonardis10@gmail.com">jtleonardis10@gmail.com</a>
-          <a href="https://www.linkedin.com/in/joeleonardis/">LinkedIn</a>
-          <a href="https://github.com/joejoeleo">GitHub</a>
-        </div>
-      </section>
+      <section class="about page-width" id="about" aria-labelledby="about-title"><p class="eyebrow accent">02 — About</p><div><h2 id="about-title">Joseph Leonardis.</h2><p class="about-intro">Mechanical engineer.<br>Usually building something.</p><p>I’m based in New Jersey. My work spans mechanical design, prototyping, fabrication, and product development. These projects bring together the things I enjoy working with: physical parts, electronics, and software.</p><a id="resume" class="text-button" href="https://drive.google.com/file/d/19wgv-1VMTOCVqtIuHqRdrhKzU3IokMuL/view">View resume <span aria-hidden="true">↗</span></a></div><div class="disciplines"><span>Mechanical design</span><span>Prototyping</span><span>Fabrication</span><span>Product development</span></div></section>
+      <section class="contact page-width" id="contact" aria-labelledby="contact-title"><p class="eyebrow accent">03 — Contact</p><div class="contact-top"><h2 id="contact-title">Get in touch.</h2><a class="contact-arrow" href="mailto:jtleonardis10@gmail.com" aria-label="Email Joseph Leonardis">↗</a></div><a class="email-link" href="mailto:jtleonardis10@gmail.com">jtleonardis10@gmail.com</a><div class="contact-links"><a href="https://www.linkedin.com/in/joeleonardis/">LinkedIn ↗</a><a href="https://github.com/joejoeleo">GitHub ↗</a><a href="https://drive.google.com/file/d/19wgv-1VMTOCVqtIuHqRdrhKzU3IokMuL/view">Resume ↗</a></div></section>
     </main>
-
-    <footer class="footer">
-      <span>Joseph Leonardis</span>
-      <span>jtleonardis10@gmail.com</span>
-    </footer>
+    <footer class="footer page-width"><span>© 2026 Joseph Leonardis</span><span>Design. Build. Repeat.</span><a href="#top">Back to top ↑</a></footer>
+    <noscript><style>.project-dialog{display:block;position:relative;max-height:none;margin:40px auto}.close-dialog{display:none}</style><p class="noscript-note">Enable JavaScript to use the project viewers. All project details are shown below.</p></noscript>
 
     <dialog class="project-dialog" id="project-infinity" aria-labelledby="infinity-title">
       <div class="dialog-shell">
         <button class="close-dialog" type="button" aria-label="Close project">Close</button>
+        <section class="project-prologue" aria-labelledby="intent-infinity">
+          <div class="intent-copy"><p class="eyebrow accent">01 / THE IDEA</p><h2 id="intent-infinity">What if a coffee table could dispense drinks?</h2><p class="intent-description">The Infinity Entertainment Table brings drink dispensing, infinity lighting, and a can crusher into a piece of furniture. A touchscreen connects the person using it to the mechanisms underneath.</p><button class="intent-jump text-button" type="button" data-build-details="infinity">See how it was built <span aria-hidden="true">↓</span></button></div>
+          <figure class="intent-media"><img src="./assets/images/capstone.jpg" alt="Original photograph of the Infinity Entertainment Table" loading="lazy" decoding="async"><figcaption>THE PHYSICAL BUILD / ORIGINAL PHOTOGRAPH</figcaption></figure>
+          <div class="intent-bridge"><span class="eyebrow">FROM IDEA TO ASSEMBLY</span><p>Five bottles, independently controlled pumps, and routed tubing handle the drinks. A Raspberry Pi, custom PCBs, and a touchscreen bring the systems together.</p><span class="bridge-cross" aria-hidden="true">+</span></div>
+        </section>
+
         <div class="project-layout">
           <aside class="project-sidebar">
             <p class="eyebrow">RIT Senior Capstone</p>
@@ -169,7 +183,7 @@
 
           <div class="project-detail">
             <figure class="hero-media">
-              <img src="./assets/images/capstone.jpg" alt="Finished Infinity Entertainment Table capstone build">
+              <img loading="lazy" decoding="async" src="./assets/images/capstone.jpg" alt="Finished Infinity Entertainment Table capstone build">
             </figure>
 
             <div class="detail-grid">
@@ -199,7 +213,7 @@
               <div class="media-grid">
                 <article class="media-item wide">
                   <figure>
-                    <img src="./assets/images/infinity/mark-3-cad.jpg" alt="Fusion 360 CAD layout for the Infinity Entertainment Table">
+                    <img loading="lazy" decoding="async" src="./assets/images/infinity/mark-3-cad.jpg" alt="Fusion 360 CAD layout for the Infinity Entertainment Table">
                   </figure>
                   <div>
                     <span>Phase 1</span>
@@ -209,7 +223,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <img src="./assets/images/infinity/mark-3-frame.jpg" alt="Infinity Entertainment Table frame with internal components installed">
+                    <img loading="lazy" decoding="async" src="./assets/images/infinity/mark-3-frame.jpg" alt="Infinity Entertainment Table frame with internal components installed">
                   </figure>
                   <div>
                     <span>Phase 2</span>
@@ -219,7 +233,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <video src="./assets/videos/infinity/mark-3-pumps.mp4" poster="./assets/images/infinity/poster-mark-3-pumps.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./assets/videos/infinity/mark-3-pumps.mp4" poster="./assets/images/infinity/poster-mark-3-pumps.jpg" controls preload="none" playsinline></video>
                   </figure>
                   <div>
                     <span>Phase 3</span>
@@ -229,7 +243,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <video src="./assets/videos/infinity/mark-3-computer-systems.mp4" poster="./assets/images/infinity/poster-mark-3-computer-systems.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./assets/videos/infinity/mark-3-computer-systems.mp4" poster="./assets/images/infinity/poster-mark-3-computer-systems.jpg" controls preload="none" playsinline></video>
                   </figure>
                   <div>
                     <span>Phase 4</span>
@@ -239,7 +253,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <video src="./assets/videos/infinity/mark-3-testing.mp4" poster="./assets/images/infinity/poster-mark-3-testing.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./assets/videos/infinity/mark-3-testing.mp4" poster="./assets/images/infinity/poster-mark-3-testing.jpg" controls preload="none" playsinline></video>
                   </figure>
                   <div>
                     <span>Phase 5</span>
@@ -249,7 +263,7 @@
                 </article>
                 <article class="media-item wide">
                   <figure>
-                    <video src="./assets/videos/infinity/mark-3-final-product.mp4" poster="./assets/images/infinity/poster-mark-3-final-product.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./assets/videos/infinity/mark-3-final-product.mp4" poster="./assets/images/infinity/poster-mark-3-final-product.jpg" controls preload="none" playsinline></video>
                   </figure>
                   <div>
                     <span>Phase 6</span>
@@ -268,7 +282,7 @@
               <div class="media-grid compact">
                 <article class="media-item">
                   <figure>
-                    <video src="./assets/videos/infinity/mark-2-overview.mp4" poster="./assets/images/infinity/poster-mark-2-overview.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./assets/videos/infinity/mark-2-overview.mp4" poster="./assets/images/infinity/poster-mark-2-overview.jpg" controls preload="none" playsinline></video>
                   </figure>
                   <div>
                     <span>Prototype</span>
@@ -278,7 +292,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <img src="./assets/images/infinity/mark-2-frame.jpg" alt="Early Infinity Entertainment Table frame">
+                    <img loading="lazy" decoding="async" src="./assets/images/infinity/mark-2-frame.jpg" alt="Early Infinity Entertainment Table frame">
                   </figure>
                   <div>
                     <span>Phase 1</span>
@@ -288,7 +302,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <img src="./assets/images/infinity/mark-2-leds.jpg" alt="LED strips installed inside the earlier Infinity Entertainment Table">
+                    <img loading="lazy" decoding="async" src="./assets/images/infinity/mark-2-leds.jpg" alt="LED strips installed inside the earlier Infinity Entertainment Table">
                   </figure>
                   <div>
                     <span>Phase 2</span>
@@ -298,7 +312,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <img src="./assets/images/led-infinity-table.jpg" alt="Blue LED infinity effect inside the earlier table">
+                    <img loading="lazy" decoding="async" src="./assets/images/led-infinity-table.jpg" alt="Blue LED infinity effect inside the earlier table">
                   </figure>
                   <div>
                     <span>Phase 3</span>
@@ -308,7 +322,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <img src="./assets/images/infinity/mark-2-dispensing.jpg" alt="Drink dispensing hardware installed in the earlier Infinity Entertainment Table">
+                    <img loading="lazy" decoding="async" src="./assets/images/infinity/mark-2-dispensing.jpg" alt="Drink dispensing hardware installed in the earlier Infinity Entertainment Table">
                   </figure>
                   <div>
                     <span>Phase 4</span>
@@ -318,7 +332,7 @@
                 </article>
                 <article class="media-item">
                   <figure>
-                    <video src="./assets/videos/infinity/mark-2-finalization.mp4" poster="./assets/images/infinity/poster-mark-2-finalization.jpg" controls preload="metadata" playsinline></video>
+                    <video src="./assets/videos/infinity/mark-2-finalization.mp4" poster="./assets/images/infinity/poster-mark-2-finalization.jpg" controls preload="none" playsinline></video>
                   </figure>
                   <div>
                     <span>Phase 5</span>
@@ -336,6 +350,12 @@
     <dialog class="project-dialog" id="project-lumen" aria-labelledby="lumen-title">
       <div class="dialog-shell compact-shell">
         <button class="close-dialog" type="button" aria-label="Close project">Close</button>
+        <section class="project-prologue" aria-labelledby="intent-lumen">
+          <div class="intent-copy"><p class="eyebrow accent">02 / THE IDEA</p><h2 id="intent-lumen">What if the desk was part of the interface?</h2><p class="intent-description">The Lumen River Desk combines an illuminated epoxy desktop with a 7-inch touchscreen. PC monitoring, media, and lighting controls live together at the desk.</p><button class="intent-jump text-button" type="button" data-build-details="lumen">See how it was built <span aria-hidden="true">↓</span></button></div>
+          <div class="intent-media intent-system" aria-label="Touchscreen connects to PC monitoring, media and lighting"><span class="eyebrow">SYSTEM OVERVIEW</span><span class="intent-node"><small>01</small>Touch input</span><span class="intent-connector" aria-hidden="true">↓</span><span class="intent-node"><small>02</small>PC · Media · Lighting</span><p>Functional system diagram</p></div>
+          <div class="intent-bridge"><span class="eyebrow">FROM IDEA TO ASSEMBLY</span><p>The build connects furniture and LED lighting with a touchscreen interface organized around three everyday functions.</p><span class="bridge-cross" aria-hidden="true">+</span></div>
+        </section>
+
         <div class="compact-detail">
           <p class="eyebrow">Furniture / Interface</p>
           <h2 id="lumen-title">Lumen River Desk + Touchscreen Interface</h2>
@@ -367,6 +387,12 @@
     <dialog class="project-dialog" id="project-water-dispenser" aria-labelledby="water-dispenser-title">
       <div class="dialog-shell compact-shell">
         <button class="close-dialog" type="button" aria-label="Close project">Close</button>
+        <section class="project-prologue" aria-labelledby="intent-water-dispenser">
+          <div class="intent-copy"><p class="eyebrow accent">03 / THE IDEA</p><h2 id="intent-water-dispenser">What if getting water started with your voice?</h2><p class="intent-description">An Alexa command starts a physical action: dispensing drinking water at a desk. The project connects a familiar voice interface to a small electronic and fluid system.</p><button class="intent-jump text-button" type="button" data-build-details="water-dispenser">See how it was built <span aria-hidden="true">↓</span></button></div>
+          <div class="intent-media intent-system" aria-label="Voice command connects to Arduino control and a water pump"><span class="eyebrow">SYSTEM OVERVIEW</span><span class="intent-node"><small>01</small>Voice command</span><span class="intent-connector" aria-hidden="true">↓</span><span class="intent-node"><small>02</small>Arduino</span><span class="intent-connector" aria-hidden="true">↓</span><span class="intent-node"><small>03</small>Pump & tubing</span><p>Functional system diagram</p></div>
+          <div class="intent-bridge"><span class="eyebrow">FROM IDEA TO ASSEMBLY</span><p>Alexa provides the input. An Arduino controls the pump, and tubing routes the water to the dispensing point.</p><span class="bridge-cross" aria-hidden="true">+</span></div>
+        </section>
+
         <div class="compact-detail">
           <p class="eyebrow">Arduino / Voice Control</p>
           <h2 id="water-dispenser-title">Alexa-Powered Water Dispenser</h2>
@@ -398,9 +424,15 @@
     <dialog class="project-dialog" id="project-study-table" aria-labelledby="study-table-title">
       <div class="dialog-shell compact-shell">
         <button class="close-dialog" type="button" aria-label="Close project">Close</button>
+        <section class="project-prologue" aria-labelledby="intent-study-table">
+          <div class="intent-copy"><p class="eyebrow accent">04 / THE IDEA</p><h2 id="intent-study-table">What if the extra workspace carried its own light?</h2><p class="intent-description">This table extends an existing desk and integrates LED lighting into its surface. Its legs were sized to match the desk height, so the two surfaces work together.</p><button class="intent-jump text-button" type="button" data-build-details="study-table">See how it was built <span aria-hidden="true">↓</span></button></div>
+          <figure class="intent-media"><img src="./assets/images/study-table/finish.jpg" alt="Original photograph of the study table" loading="lazy" decoding="async"><figcaption>THE PHYSICAL BUILD / ORIGINAL PHOTOGRAPH</figcaption></figure>
+          <div class="intent-bridge"><span class="eyebrow">FROM IDEA TO ASSEMBLY</span><p>A wood frame supports the plexiglass. Sanding, dark stain, an oil finish, and integrated LEDs complete the assembly.</p><span class="bridge-cross" aria-hidden="true">+</span></div>
+        </section>
+
         <div class="compact-detail">
           <figure class="hero-media">
-            <img src="./assets/images/study-table/finish.jpg" alt="Finished LED study table attached to a desk">
+            <img loading="lazy" decoding="async" src="./assets/images/study-table/finish.jpg" alt="Finished LED study table attached to a desk">
           </figure>
           <p class="eyebrow">Furniture / Lighting</p>
           <h2 id="study-table-title">LED Study Table</h2>
@@ -425,7 +457,7 @@
             <div class="media-grid compact">
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/study-table/project.jpg" alt="LED study table project overview">
+                  <img loading="lazy" decoding="async" src="./assets/images/study-table/project.jpg" alt="LED study table project overview">
                 </figure>
                 <div>
                   <span>Project</span>
@@ -435,7 +467,7 @@
               </article>
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/study-table/frame.jpg" alt="LED study table frame during construction">
+                  <img loading="lazy" decoding="async" src="./assets/images/study-table/frame.jpg" alt="LED study table frame during construction">
                 </figure>
                 <div>
                   <span>Phase 1</span>
@@ -445,7 +477,7 @@
               </article>
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/study-table/legs.jpg" alt="LED study table leg fit-up">
+                  <img loading="lazy" decoding="async" src="./assets/images/study-table/legs.jpg" alt="LED study table leg fit-up">
                 </figure>
                 <div>
                   <span>Phase 2</span>
@@ -455,7 +487,7 @@
               </article>
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/study-table/finish.jpg" alt="Finished LED study table surface">
+                  <img loading="lazy" decoding="async" src="./assets/images/study-table/finish.jpg" alt="Finished LED study table surface">
                 </figure>
                 <div>
                   <span>Phase 3</span>
@@ -472,9 +504,15 @@
     <dialog class="project-dialog" id="project-pipe-lamp" aria-labelledby="pipe-lamp-title">
       <div class="dialog-shell compact-shell">
         <button class="close-dialog" type="button" aria-label="Close project">Close</button>
+        <section class="project-prologue" aria-labelledby="intent-pipe-lamp">
+          <div class="intent-copy"><p class="eyebrow accent">05 / THE IDEA</p><h2 id="intent-pipe-lamp">What can ordinary pipe fittings become?</h2><p class="intent-description">A set of industrial fittings becomes the body of a desk lamp. The exposed connections give it its shape; an integrated dimmer makes the light adjustable.</p><button class="intent-jump text-button" type="button" data-build-details="pipe-lamp">See how it was built <span aria-hidden="true">↓</span></button></div>
+          <figure class="intent-media"><img src="./assets/images/pipe-lamp/final.png" alt="Original photograph of the pipe lamp" loading="lazy" decoding="async"><figcaption>THE PHYSICAL BUILD / ORIGINAL PHOTOGRAPH</figcaption></figure>
+          <div class="intent-bridge"><span class="eyebrow">FROM IDEA TO ASSEMBLY</span><p>The lamp brings together a pipe-hardware assembly, routed wiring, and a dimmer switch built into the body.</p><span class="bridge-cross" aria-hidden="true">+</span></div>
+        </section>
+
         <div class="compact-detail">
           <figure class="hero-media">
-            <img src="./assets/images/pipe-lamp/final.png" alt="Finished pipe lamp with dimmer switch">
+            <img loading="lazy" decoding="async" src="./assets/images/pipe-lamp/final.png" alt="Finished pipe lamp with dimmer switch">
           </figure>
           <p class="eyebrow">Lighting / Electrical</p>
           <h2 id="pipe-lamp-title">Rustic Pipe Lamp</h2>
@@ -499,7 +537,7 @@
             <div class="media-grid compact">
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/pipe-lamp/design.jpg" alt="Pipe lamp design and dimmer switch work">
+                  <img loading="lazy" decoding="async" src="./assets/images/pipe-lamp/design.jpg" alt="Pipe lamp design and dimmer switch work">
                 </figure>
                 <div>
                   <span>Design</span>
@@ -509,7 +547,7 @@
               </article>
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/pipe-lamp/final.png" alt="Finished rustic pipe lamp">
+                  <img loading="lazy" decoding="async" src="./assets/images/pipe-lamp/final.png" alt="Finished rustic pipe lamp">
                 </figure>
                 <div>
                   <span>Final</span>
@@ -526,9 +564,15 @@
     <dialog class="project-dialog" id="project-ring-necklace" aria-labelledby="ring-necklace-title">
       <div class="dialog-shell compact-shell">
         <button class="close-dialog" type="button" aria-label="Close project">Close</button>
+        <section class="project-prologue" aria-labelledby="intent-ring-necklace">
+          <div class="intent-copy"><p class="eyebrow accent">06 / THE IDEA</p><h2 id="intent-ring-necklace">How can an inlay change an ordinary ring?</h2><p class="intent-description">A titanium blank becomes a ring necklace through its inlay: meteorite shavings and glow dust, set into the ring and finished as part of the surface.</p><button class="intent-jump text-button" type="button" data-build-details="ring-necklace">See how it was built <span aria-hidden="true">↓</span></button></div>
+          <figure class="intent-media"><img src="./assets/images/ring-necklace/final.jpg" alt="Original photograph of the ring necklace" loading="lazy" decoding="async"><figcaption>THE PHYSICAL BUILD / ORIGINAL PHOTOGRAPH</figcaption></figure>
+          <div class="intent-bridge"><span class="eyebrow">FROM IDEA TO ASSEMBLY</span><p>The process moves from preparing the blank to integrating the inlay, then finishing and polishing the completed ring.</p><span class="bridge-cross" aria-hidden="true">+</span></div>
+        </section>
+
         <div class="compact-detail">
           <figure class="hero-media">
-            <img src="./assets/images/ring-necklace/final.jpg" alt="Finished custom ring necklace">
+            <img loading="lazy" decoding="async" src="./assets/images/ring-necklace/final.jpg" alt="Finished custom ring necklace">
           </figure>
           <p class="eyebrow">Materials / Detail Work</p>
           <h2 id="ring-necklace-title">Custom Ring Necklace</h2>
@@ -553,7 +597,7 @@
             <div class="media-grid compact">
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/ring-necklace/blank.jpg" alt="Titanium ring blank">
+                  <img loading="lazy" decoding="async" src="./assets/images/ring-necklace/blank.jpg" alt="Titanium ring blank">
                 </figure>
                 <div>
                   <span>Phase 1</span>
@@ -563,7 +607,7 @@
               </article>
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/ring-necklace/integration.jpg" alt="Meteorite shavings and glow dust integrated into the ring">
+                  <img loading="lazy" decoding="async" src="./assets/images/ring-necklace/integration.jpg" alt="Meteorite shavings and glow dust integrated into the ring">
                 </figure>
                 <div>
                   <span>Phase 2</span>
@@ -573,7 +617,7 @@
               </article>
               <article class="media-item">
                 <figure>
-                  <img src="./assets/images/ring-necklace/final.jpg" alt="Finished custom ring necklace">
+                  <img loading="lazy" decoding="async" src="./assets/images/ring-necklace/final.jpg" alt="Finished custom ring necklace">
                 </figure>
                 <div>
                   <span>Final</span>
@@ -587,32 +631,8 @@
       </div>
     </dialog>
 
-    <script>
-      const projectButtons = document.querySelectorAll("[data-project]");
-      const dialogs = document.querySelectorAll(".project-dialog");
-
-      projectButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const dialog = document.getElementById(`project-${button.dataset.project}`);
-          if (dialog) {
-            dialog.showModal();
-            dialog.scrollTo({ top: 0 });
-          }
-        });
-      });
-
-      dialogs.forEach((dialog) => {
-        const closeButton = dialog.querySelector(".close-dialog");
-        closeButton.addEventListener("click", () => dialog.close());
-        dialog.addEventListener("click", (event) => {
-          if (event.target === dialog) {
-            dialog.close();
-          }
-        });
-        dialog.addEventListener("close", () => {
-          dialog.querySelectorAll("video").forEach((video) => video.pause());
-        });
-      });
-    </script>
+    <script src="./main.js?v=20260909-atmosphere" defer></script>
+    <script src="./gallery.js?v=20260909-atmosphere" defer></script>
+    <script src="./atmosphere.js?v=20260910-no-card-outline" defer></script>
   </body>
 </html>
